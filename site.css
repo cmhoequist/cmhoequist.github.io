@@ -9,6 +9,14 @@ body {
   padding: 3px;
 }
 
+#header-div {
+  margin: 5px;
+  background-color: white;
+  padding: 5px 15px 15px 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
 #main {
   padding: 5px;
   padding-left: 15px;
