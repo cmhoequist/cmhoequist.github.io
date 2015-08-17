@@ -10,6 +10,7 @@ body {
 }
 
 #header-div {
+  margin: 5px;
   background-color: #006699;
   padding: 5px 15px 15px 5px;
   width: 100%;
