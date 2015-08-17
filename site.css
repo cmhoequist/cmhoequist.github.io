@@ -1,6 +1,14 @@
 /*This is a superfluous comment. I am using it to remind myself
 how to comment here; for some reason, I always forget that.*/
 
+head {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  background-color: dimgrey;
+  color: #696969;
+  padding: 3px;
+}
+
 body {
   font-family: Verdana, sans-serif;
   font-size: 16px;
