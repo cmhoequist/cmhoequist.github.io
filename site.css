@@ -9,6 +9,13 @@ body {
   padding: 3px;
 }
 
+h1 {
+  font-family: Georgia, serif;
+  border-bottom: 3px solid #cc9900;
+  color: #CC9900;
+  font-size: 30px;
+}
+
 #header-div {
   margin: 5px;
   background-color: #006699;
