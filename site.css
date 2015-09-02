@@ -1,128 +1,125 @@
 body{
-  background: red;
+  background: white;
   margin: 0px;                        /*PREF: get everything flush with the edges*/
   overflow-x: hidden;
+  font-family: "League Gothic", "Serif";
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+li{
+  display: inline-block;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: #cc9900;
+  background: #555555;
+  border-radius: 10px;
 }
 
 .my-navbar{
   position: fixed;                    /*position is fixed relative to the screen; will overlay body if no margin is added*/
-  background: #f0ead6;
+  background: white;
   list-style-type: none;              /*no bullets*/
   top: 0px;                           /*needs to be specified or it'll move with #main, for some reason*/
   left: 0px;
   right: 0px;
   z-index: 99;                          /*all elements other than img will go under the navbar by default. Set high for img.*/
-}
-ul{
-  padding: 0px;                       /*has padding-left by default*/
-}
-#navbar-menu{
-  margin: 0px;                        /*default margins extend my-navbar by 30px, to 62px*/
-  width: 100%;
+  font-size: 1.4em;
   text-align: right;
-  border-bottom: 2px solid #888888;
 }
-#navbar-menu *{                       /*can't just be .my-navbar li because the navbar includes a nested struct of icons. Gotta be all child*/
-  display: inline-block;                    /*all li should be displayed as an inline item, not block (all on single line)*/
+.navbar-menu{
+  text-align: right;
 }
-li{
-  display: inline-block;        /*all li should be displayed inline, even those not in the navbar*/
+.navbar-menu *{
+  display: inline-block;
 }
-#navbar-menu > :first-child{
+.navbar-menu > *{
+  margin: 0 5px 0 5px;
+}
+.navbar-menu a{
+  padding: 5px;
+}
+.navbar-menu > :nth-child(1){
   float: left;
 }
-#navbar-menu > :nth-child(2){
+.navbar-menu > :nth-child(2){
   float: left;
-}
-#navbar-menu > *{
-  padding: 0 5px 0 5px;                             /*make some room! All direct children get padding around their elements.*/
-}
-.my-navbar a{
-  font-family: "Georgia", "Serif";
-  text-decoration: none;
-  padding: 5px;                            /*without padding, the navbar-menu's children have 0 padding. This holds everything in place*/
-}
-.my-navbar a:hover{
-  color: #cc9900;
-  background: #555555;
-  border-radius: 10px;
 }
 .list-icons a{
   display: block;
   text-decoration: none;
 }
 
-#main{
-  background: white;
-  margin: 27px 0px 0px 0px;                 /*margin is exact for block type navbar, not for inline*/
-  padding: 0px;
+
+.main{
   text-align: center;
-  font-size: 2em;
+  background: white;
+  font-size: 1.5em;
+  margin-top: 37px;
 }
-#main > *{
-  padding: 300px 0px 300px 0px;
+.main *{
+  margin: 2px;
+}
+
+#introduction{
+  padding: 200px 0 300px 0;
+  background: url(http://i.imgur.com/v3Z5sxC.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  border: 2px outset #888888;
+  border-radius: 10px;
+}
+.intro-wrapper{
+  width: 100%;
+  display: table;
+  height: 200px;
+  border-spacing: 100px 10px;
+}
+.intro-tile{
+  display: table-cell;
+  width: 15%;
+  padding: 15px;
+  vertical-align: middle;
+  font-size: 0.75em;
+  background: #f0ead6;
   border-radius: 15px;
-  border-top: 2px solid white;
-  border-left: 4px solid white;
-  border-right: 4px solid white;
-  border-bottom: 2px solid white;
-  text-shadow: 0px 0px 1px #cc9900;
-  color: white;
 }
-#main *{
-  margin: 0px;
+#intro-face{
+  background: url("https://cloud.githubusercontent.com/assets/11493384/9555077/78d85df0-4d90-11e5-9d1f-7c30a439e77a.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-#intro{
-  background: url(https://cloud.githubusercontent.com/assets/11493384/9318739/4a358a86-450c-11e5-9281-b94689f052cb.JPG);
-  background-attachment: fixed;
-  background-size: cover;
-}
+
 #portfolio{
-  background: url(https://cloud.githubusercontent.com/assets/11493384/9337224/b8476462-45a3-11e5-92b3-1ea7525dbf31.png);
-  background-attachment: fixed;
-  background-size: cover;
-  text-shadow: 0px 0px 1px white;
-  color: black;
+  padding: 150px 0 300px 0;
 }
+
 #contact{
-  background: url(https://cloud.githubusercontent.com/assets/11493384/9318739/4a358a86-450c-11e5-9281-b94689f052cb.JPG);
-  background-attachment: fixed;
-  background-size: cover;
+  padding: 300px 0 300px 0;
+  font-size: 1.1em;
 }
-#contact > ul {
-  transform: scale(2,2);
+#contact > *{
+  margin: 5px;
 }
-#contact a{
-  padding: 5px;                                                     /*increase size of hyperlink to replace lost padding from button*/
-  color: inherit;
+#contact > ul{
+  transform: scale(1.75,1.75);          /*want transform because it accentuates ALL effects, not just font-size; */
+}                                        /*but also can't just apply it to the buttons, as transform takes element out of layout flow*/
+#contact > :last-child{
+  margin-top: 20px;                       /*offset to account for transform*/
 }
-button{
+.button-king{
   padding: 0px;                                                     /*remove padding so block link covers whole button*/
   color: #551A8B;                                                    /*default color for visited links; I liked it, so overriding here*/
 }
-button:hover{
-  color: #cc9900;
+.button-king a{
+  padding: 5px;
+}
+.button-king:hover{
   background: #555555;
   border-radius: 10px;
 }
-h4{
-  transform: translateY(75%);
-}
-.row-simulator *{
-  width: 200px;
-  height: 200px;
-}
-img{
-  opacity: 0.25;
-}
-img:hover{
-  border-radius: 10px;
-  opacity: 1;
-}
-
-/*list of nice colors:
-    background: #d6f0ea;
-    background: #d6dcf0;
-    background: #f0ead6;
-    background: #302a16;
-*/
