@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="fcc2.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!--Include jQuery from MS CDN-->
-  <script src="formal_script.js"></script>
+  <script src="fcc2.js"></script>
 </head>
 <body>
-  <!--Navbar-->
-  <nav class="my-navbar">
-    <ul class="navbar-menu">
-      <li id="me">
-        <a href="http://cmhoequist.github.io">Moritz Hoequist</a>
+  <nav class="my-navbar-vertical">
+    <ul class="navbar-menu-vertical">
+      <li>
+        <a href="http://cmhoequist.github.io" id="me">M</a>
       </li>
       <li>
         <ul class="list-icons">
@@ -32,6 +31,10 @@
           </li>
         </ul>
       </li>
+    </ul>
+  </nav>
+  <nav class="my-navbar-mini">
+    <ul>
       <li>
         <a href="#">Home</a>                                                    <!--empty link goes to top of page-->
       </li>
@@ -43,62 +46,36 @@
       </li>
     </ul>
   </nav>
-  <!--Main-->
   <div class="main">
-    <!--Introduction-->
     <div id="introduction">
-      <div class="intro-wrapper">
-        <div class="intro-tile">
-          <p>Never one to flinch from a challenge, I hold commendations from seventeen nations all over the globe. My strategic genius
-             is overshadowed only by my physical prowess. My skills are limitless. My existence is eternal. I am old and mighty.</p>
-        </div>
-        <div class="intro-tile" id="intro-face">
-        </div>
-        <div class="intro-tile">
-          <p>My programming literacy includes HTML, CSS, JavaScript, jQuery, Python, SQL, C++ and Java. Holding degrees in both
-             engineering and computer science, I am passionate about designing and improving infrastructure.</p>
-        </div>
-      </div>
+      <h1 class="hidable">Welcome to me</h1>
     </div>
-    <!--Portfolio-->
     <div id="portfolio">
-      <h1>The Glorious Portfolio</h1>
-      <h2>Empty as of yet</h2>
-      <div class="row-simulator">
-        <img src="https://cloud.githubusercontent.com/assets/11493384/9555077/78d85df0-4d90-11e5-9d1f-7c30a439e77a.jpg">
-        <img src="https://cloud.githubusercontent.com/assets/11493384/9555077/78d85df0-4d90-11e5-9d1f-7c30a439e77a.jpg">
-      </div>
-      <div class="row-simulator">
-        <img src="https://cloud.githubusercontent.com/assets/11493384/9555077/78d85df0-4d90-11e5-9d1f-7c30a439e77a.jpg">
-        <img src="https://cloud.githubusercontent.com/assets/11493384/9555077/78d85df0-4d90-11e5-9d1f-7c30a439e77a.jpg">
-      </div>
+      <h1 class="hidable">Portfolio</h1>
     </div>
-    <!--Contact-->
     <div id="contact">
-      <h1>Contact Information</h1>
-      <ul class="list-icons">
-        <li>
-          <button class="button-king">
+      <div class="main-tile">
+        <ul>
+          <li>
             <a href="http://www.freecodecamp.com/cmhoequist">
-              <span><i class="fa fa-fire"></i> freeCodeCamp<span/>
+              <span><i class="fa fa-fire"></i><br>freeCodeCamp</span>
             </a>
-          </button>
-        </li>
-        <li>
-          <button class="button-king">
+          </li>
+          <li>
             <a href="https://github.com/cmhoequist">
-              <span><i class="fa fa-github"></i> GitHub</span>
+              <span><i class="fa fa-github"></i><br>GitHub</span>
             </a>
-          </button>
-        </li>
-          <button class="button-king">
+          </li>
+          <li>
             <a href="http://codepen.io/cmhoequist/">
-              <span><i class="fa fa-codepen"></i> CodePen</span>
+              <span><i class="fa fa-codepen"></i><br>CodePen</span>
             </a>
-          </button>
-        </li>
-      </ul>
-      <h4>cmhoequist@gmail.com</h4>
+          </li>
+        </ul>
+      </div>
+      <div id="wrapper-headshot" class="main-tile">
+        <div id="headshot"></div>
+      </div>
     </div>
   </div>
 </body>
