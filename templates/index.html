@@ -5,17 +5,20 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
   <link type='stylesheet' href='index.css'>
   <script src='../javascript/champions.modules.js'></script>
-  <script src='../javascript/controllers/controller.champions.js'></script>
   <script src='../javascript/services/service.draw.js'></script>
   <script src='../javascript/services/service.search.js'></script>
+  <script src='../javascript/controllers/controller.champions.js'></script>
+  <!-- note the use of '..' to cd out to the parent directory first -->
 </head>
 
 <body ng-controller='ChampCtrl as main'>
+  <div class='topnav'>
+    <button>View Splash</button>
+    <input type='text' ng-model='main.name'>
+    <button ng-click='main.update(main.name)'>Find Champion</button>
+  </div>
   <div>
-    <form ng-submit='main.update(name)'>
-      <input type="text" ng-model='main.name'>
-      <button type='submit'>Find Champion</button>
-    </form>
+    <img ng-src='http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{main.champion}}_0.jpg'/>
   </div>
 </body>
 
