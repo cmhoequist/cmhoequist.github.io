@@ -3,7 +3,7 @@
 
   function ChampCtrl($scope, Search, Skew){
     var self = this;
-    self.name = "YOU CAN'T MILK THOSE";
+    self.name = "Fizz";
 
     self.update = function(name){
       console.log(name);
