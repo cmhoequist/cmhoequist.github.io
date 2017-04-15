@@ -12,7 +12,7 @@
         .then(function(response){
           var champs = response.data.data;
           for(var key in champs){
-            dict[champs[key].name] = {key: champs[key].key, skins: {}};
+            dict[champs[key].name] = {key: champs[key].key, skins: {}, skinCount: champs[key].skins.length};
             for(var skinNum in champs[key].skins){
               var skin = champs[key].skins[skinNum];
               dict[champs[key].name].skins[skin.num] = skin.name;   //Note that skin.num is not monotonically ascending in the source data. Don't be surprised to see leaps.
@@ -40,7 +40,11 @@
       return self.imageUrls[type](champName);
     }
 
-    var Load = {load: loadImage};
+    function loadSkinData(champName){
+      return self.championIds[champName].skins;
+    }
+
+    var Load = {loadImage: loadImage, loadSkinData: loadSkinData};
     return Load;
   };
 

@@ -4,10 +4,29 @@
   function ChampCtrl($scope, $http, Load, Skew){
     var self = this;
     self.name = "Fizz";
+    self.tblInfo = [], self.tblInfo[0] = [];
 
     self.update = function(newName){
-      var imgSource = Load.load('splash', newName);
+      self.tblInfo = [], self.tblInfo[0] = [];
+      var imgSource = Load.loadImage('splash', newName);
       Skew.display(imgSource);
+
+      var skinInfo = Load.loadSkinData(newName);
+      var sides = Math.ceil(Math.sqrt(Object.keys(skinInfo).length));
+      console.log(skinInfo.skinCount);
+      console.log('cols: '+sides+', rows: '+sides);
+      var i = 0, j = 0;
+      for(var key in skinInfo){
+        if(i >= sides){
+          j += 1; i = 0;
+          self.tblInfo[j] = [];
+        }
+        self.tblInfo[j].push(skinInfo[key]);
+        i += 1;
+      }
+
+      console.log(self.tblInfo);
+
     }
   }
 })();

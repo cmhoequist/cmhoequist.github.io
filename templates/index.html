@@ -25,10 +25,11 @@
   </div>
   <div>
     <table>
-      <tr>
-        <td></td>
+      <tr ng-repeat='row in main.tblInfo'>
+        <td ng-repeat='cell in row'>{{cell}}</td>
       </tr>
     </table>
+
   </div>
 
 </body>
