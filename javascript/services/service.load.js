@@ -12,7 +12,11 @@
         .then(function(response){
           var champs = response.data.data;
           for(var key in champs){
-            dict[champs[key].name] = {key: champs[key].key, skinCount: champs[key].skins.length};
+            dict[champs[key].name] = {key: champs[key].key, skins: {}};
+            for(var skinNum in champs[key].skins){
+              var skin = champs[key].skins[skinNum];
+              dict[champs[key].name].skins[skin.num] = skin.name;   //Note that skin.num is not monotonically ascending in the source data. Don't be surprised to see leaps.
+            }
           }
           console.log(dict);
           console.log(champs);
