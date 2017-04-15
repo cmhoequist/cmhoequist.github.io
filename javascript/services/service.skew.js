@@ -26,8 +26,6 @@
           var stretch = sh/2;
           var hGradient = sw;
           var wFactor = j;
-
-          console.log(wFactor);
           for(var i = 0; i < hGradient; i++){
             stretch += (i%2)*sh/hGradient;
             ctx.drawImage(img,
