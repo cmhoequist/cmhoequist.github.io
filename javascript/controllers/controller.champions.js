@@ -6,7 +6,8 @@
     self.name = "Fizz";
 
     self.update = function(newName){
-      Load.load('splash', newName);
+      var imgSource = Load.load('splash', newName);
+      Skew.display(imgSource);
     }
   }
 })();

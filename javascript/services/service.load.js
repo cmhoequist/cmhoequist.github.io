@@ -37,7 +37,7 @@
     };
 
     function loadImage(type, champName){
-      Skew.display(self.imageUrls[type](champName));
+      return self.imageUrls[type](champName);
     }
 
     var Load = {load: loadImage};
