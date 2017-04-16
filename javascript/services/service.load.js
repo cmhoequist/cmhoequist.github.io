@@ -36,8 +36,8 @@
       }
     };
 
-    function loadImage(type, champName){
-      return self.imageUrls[type](champName);
+    function loadImage(type, champName, skin){
+      return self.imageUrls[type](champName, skin);
     }
 
     function loadSkinData(champName){

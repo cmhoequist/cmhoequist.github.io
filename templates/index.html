@@ -16,7 +16,7 @@
   <div class='topnav'>
     <button>View Splash</button>
     <input type='text' ng-model='newName' ng-init='newName="Fizz";'>
-    <button ng-click='main.update(newName)'>Find Champion</button>
+    <button ng-click='main.update(newName); main.portrait(newName, 0)'>Find Champion</button>
   </div>
   <div>
     <p>{{main.name}}</p>
@@ -26,10 +26,11 @@
   <div>
     <table>
       <tr ng-repeat='row in main.tblInfo'>
-        <td ng-repeat='cell in row'>{{cell}}</td>
+        <td ng-repeat='cell in row'><img  ng-src='{{main.thumbnail(cell)}}'
+                                          style='max-width:100px; max-height:100px'
+                                          ng-click='main.portrait(main.name, cell)'></td>
       </tr>
     </table>
-
   </div>
 
 </body>
