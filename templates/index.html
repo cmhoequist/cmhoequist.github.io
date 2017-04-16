@@ -3,10 +3,9 @@
 
 <head>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='index.css'>
   <script src='../javascript/champions.modules.js'></script>
-  <script src='../javascript/services/service.skew.js'></script>
-  <script src='../javascript/services/service.search.js'></script>
   <script src='../javascript/services/service.load.js'></script>
   <script src='../javascript/controllers/controller.champions.js'></script>
   <!-- note the use of '..' to cd out to the parent directory first -->
@@ -14,8 +13,8 @@
 
 <body ng-controller='ChampCtrl as main'>
   <div class='parent' id='topnavParent'>
-    <input type='text' ng-model='main.newName'>
-    <button ng-click='main.update(main.newName); main.portrait(main.newName, 0)'>Find Champion</button>
+    <input type='text' ng-model='main.newName' ng-click='main.newName=""'>
+    <button ng-click='main.update(main.newName); main.portrait(main.newName, 0)' class="fa fa-arrow-right"></button>
   </div>
   <div class='parent' id='portraitParent'>
     <div ng-show='main.name'>
@@ -25,7 +24,7 @@
       <table>
         <tr ng-repeat='row in main.tblInfo'>
           <td ng-repeat='cell in row'>
-            <img class='thumbnail' ng-src='{{main.thumbnail(cell)}}' ng-click='main.setCell(cell)'>
+            <img class='thumbnail' ng-src='{{main.thumbnail(cell)}}' ng-click='main.setCell(cell)' ng-class='{transparent: (cell===main.cell)}'>
           </td>
         </tr>
       </table>

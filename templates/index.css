@@ -1,5 +1,35 @@
 * {
-  padding: 2px;
+  /*padding: 2px;*/
+}
+
+body {
+  background: linear-gradient(#118899, #000219);
+  background-attachment: fixed;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 4px;
+  border: 1px solid #daa520;
+  border-radius: 6px;
+  color: white;
+  background-color: #222222;
+  outline: none;
+  text-align: center;
+  font-family: "Friz Quadrata" "Tahoma" monospace;
+  font-size: 25px;
+}
+
+button {
+  border-radius: 25px;
+  padding: 0 25px 0 25px;
+  background-color: white;
+  border: 2px solid gray;
+  outline: none;
+}
+
+button:hover, button:focus{
+  background-color: #daa520;
 }
 
 .parent {
@@ -15,10 +45,8 @@
   max-height: 100px;
 }
 
-body {
-  background: linear-gradient(#118899, #000219);
-  background-attachment: fixed;
-    /*background-color: #011444;*/
+.transparent{
+  opacity: 0.25;
 }
 
 #portrait{

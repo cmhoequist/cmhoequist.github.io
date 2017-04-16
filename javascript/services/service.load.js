@@ -1,7 +1,7 @@
 (function(){
   angular.module('champApp').factory('Load',Load);
 
-  function Load($http, Skew){
+  function Load($http){
     var self = this;
     self.apiKey = '78338542-d9b4-4171-940a-2179a8bd73a7';
     self.url = 'https://global.api.riotgames.com/api/lol/static-data/NA/v1.2/champion?champData=skins&api_key='+self.apiKey;
