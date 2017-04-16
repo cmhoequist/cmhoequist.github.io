@@ -3,7 +3,7 @@
 
 <head>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
-  <link type='stylesheet' href='index.css'>
+  <link rel='stylesheet' href='index.css'>
   <script src='../javascript/champions.modules.js'></script>
   <script src='../javascript/services/service.skew.js'></script>
   <script src='../javascript/services/service.search.js'></script>
@@ -15,24 +15,24 @@
 <body ng-controller='ChampCtrl as main'>
   <div class='topnav'>
     <button>View Splash</button>
-    <input type='text' ng-model='newName' ng-init='newName="Fizz";'>
-    <button ng-click='main.update(newName); main.portrait(newName, 0)'>Find Champion</button>
+    <input type='text' ng-model='main.newName'>
+    <button ng-click='main.update(main.newName); main.portrait(main.newName, 0)'>Find Champion</button>
   </div>
   <div>
-    <p>{{main.name}}</p>
-    <!-- <img ng-src='http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{main.champion}}_0.jpg'/> -->
-    <canvas id='ribbon' width=900  height=600></canvas>
+    <div style="float:left;">
+      <!-- <img ng-src='{{main.portrait(main.newName)}}'> -->
+      <canvas id='ribbon' width=900  height=600></canvas>
+    </div>
+    <div style="float:left;">
+      <table>
+        <tr ng-repeat='row in main.tblInfo'>
+          <td ng-repeat='cell in row'>
+            <img ng-src='{{main.thumbnail(cell)}}' ng-click='main.portrait(main.name, cell)' style='max-width:100px; max-height:100px'>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
-  <div>
-    <table>
-      <tr ng-repeat='row in main.tblInfo'>
-        <td ng-repeat='cell in row'><img  ng-src='{{main.thumbnail(cell)}}'
-                                          style='max-width:100px; max-height:100px'
-                                          ng-click='main.portrait(main.name, cell)'></td>
-      </tr>
-    </table>
-  </div>
-
 </body>
 
 </html>

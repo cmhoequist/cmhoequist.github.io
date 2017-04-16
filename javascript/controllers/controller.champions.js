@@ -1,7 +1,7 @@
 (function(){
   angular.module('champApp').controller('ChampCtrl', ChampCtrl);
 
-  function ChampCtrl($scope, $http, Load, Skew){
+  function ChampCtrl($scope, Load, Skew){
     var self = this;
     self.name = "Fizz";
     self.tblInfo = [], self.tblInfo[0] = [];
@@ -31,6 +31,7 @@
     self.portrait = function(name, number){
       var imgSource = Load.loadImage('splash', name, number);
       Skew.display(imgSource);
+      return imgSource;
     }
   }
 })();
