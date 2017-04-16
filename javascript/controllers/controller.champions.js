@@ -3,10 +3,12 @@
 
   function ChampCtrl($scope, Load, Skew){
     var self = this;
-    self.name = "Fizz";
+    self.name = "";
     self.tblInfo = [], self.tblInfo[0] = [];
+    self.cell = 0;
 
     self.update = function(newName){
+      self.cell = 0;
       self.name = newName;
       self.tblInfo = [], self.tblInfo[0] = [];
       var skinInfo = Load.loadSkinData(newName);
@@ -21,16 +23,19 @@
         self.tblInfo[j].push(key);
         i += 1;
       }
-      console.log(self.tblInfo);
     }
 
     self.thumbnail = function(skin){
       return Load.loadImage('card', self.name, skin);
     }
 
-    self.portrait = function(name, number){
-      var imgSource = Load.loadImage('splash', name, number);
-      Skew.display(imgSource);
+    self.setCell = function(cell){
+      self.cell = cell;
+    }
+
+    self.portrait = function(name){
+      var imgSource = Load.loadImage('splash', name, self.cell);
+      // Skew.display(imgSource);
       return imgSource;
     }
   }

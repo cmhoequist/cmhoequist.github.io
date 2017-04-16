@@ -37,7 +37,9 @@
     };
 
     function loadImage(type, champName, skin){
-      return self.imageUrls[type](champName, skin);
+      if(champName){
+        return self.imageUrls[type](champName, skin);
+      }
     }
 
     function loadSkinData(champName){
